@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body
+{
+    overflow: hidden;
+}
+
+.CONTAINER
+{
+    position: relative;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE
+{
+    min-height: 100vh;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 10%;
+    padding-bottom: 70px;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .CONTENT
+{
+    flex: 1 1 350px;
+    animation: SILDE_CONTENT .5s linear .7s backwards;
+}
+
+@keyframes SILDE_CONTENT 
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateX(-50px);
+    }    
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .IMAGE
+{
+    flex: 1 1 500px;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE img
+{
+    width: 100%;
+    animation: SILDE_IMAGE .5s linear;
+}
+
+@keyframes SILDE_IMAGE 
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(-50px);
+    }    
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .CONTENT h3
+{
+    font-size: 35px;
+    color: #333;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .CONTENT p
+{
+    font-size: 15px;
+    color: #666;
+    padding: 10px 0;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .CONTENT .BTN
+{
+    margin-top: 10px;
+    display: inline-block;
+    background: #666;
+    color: #FFF;
+    font-size: 17px;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+
+.CONTAINER .SILDER_CONTAINER .SILDE .CONTENT .BTN:hover
+{
+    background: #333;
+}
+
+.CONTAINER .SILDER_CONTAINER
+{
+    display: none;
+}
+
+.CONTAINER .SILDER_CONTAINER.ACTIVE
+{
+    display: block;
+}
+
+.CONTAINER .SILDER_CONTAINER:nth-child(1) .SILDE
+{
+    background: linear-gradient(90deg, #F9F9F9 70%,  #FFFF99 30%);
+}
+
+.CONTAINER .SILDER_CONTAINER:nth-child(2) .SILDE
+{
+    background: linear-gradient(90deg, #F9F9F9 70%,  #FF9090 30%);
+}
+
+.CONTAINER .SILDER_CONTAINER:nth-child(3) .SILDE
+{
+    background: linear-gradient(90deg, #F9F9F9 70%,  #3232ECB0 30%);
+}
+
+.CONTAINER #PREV,
+.CONTAINER #NEXT
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    background: #333;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.CONTAINER #PREV:hover,
+.CONTAINER #NEXT:hover
+{
+    background: #666;
+}
+
+.CONTAINER #PREV
+{
+    left: 20px;
+}
+
+.CONTAINER #NEXT
+{
+    right: 20px;
+}
